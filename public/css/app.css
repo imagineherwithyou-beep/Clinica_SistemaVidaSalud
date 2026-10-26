@@ -1,0 +1,19 @@
+/*
+ * Punto de entrada de los estilos (sin npm ni Vite). El orden importa:
+ * tokens -> base -> layout -> componentes.
+ * Un módulo nuevo (pacientes, médicos, citas...) reutiliza estas piezas y casi nunca necesita CSS propio.
+ */
+@import url("base/tokens.css");
+@import url("base/base.css");
+
+@import url("layout/shell.css");
+@import url("layout/auth.css");
+
+@import url("components/buttons.css");
+@import url("components/forms.css");
+@import url("components/cards.css");
+@import url("components/tables.css");
+@import url("components/feedback.css");
+@import url("components/catalogs.css");
+@import url("components/patients.css");
+@import url("components/schedules.css");

@@ -1,0 +1,117 @@
+/* Estructura de la aplicación: menú lateral colapsable + barra superior + contenido */
+
+.app { min-height: 100vh; }
+
+/* ---------- Menú lateral ---------- */
+.sidebar {
+    position: fixed; inset: 0 auto 0 0; z-index: 40;
+    display: flex; flex-direction: column;
+    width: var(--sidebar-w);
+    background: #142e50;
+    color: #d8e2f0;
+    transition: width 0.2s ease, transform 0.2s ease;
+}
+
+.brand {
+    display: flex; align-items: center; gap: 0.75rem;
+    height: var(--topbar-h); padding: 0 1.25rem;
+    border-bottom: 0;
+    color: #fff; font-size: 1.125rem; font-weight: 700; text-decoration: none;
+}
+.brand-mark {
+    flex: none; display: grid; place-items: center;
+    width: 2.25rem; height: 2.25rem;
+    border-radius: 12px; background: linear-gradient(135deg, #4fe0c2, #49a4ff); color: #10314c;
+}
+.brand-text { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.nav { flex: 1; overflow-y: auto; padding: 1rem 0.75rem; }
+.nav-group { margin-top: 1.25rem; }
+.nav-group-title { margin: 0 0.75rem 0.4rem; color: #92a7c0; font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+.nav-item {
+    display: flex; align-items: center; gap: 0.75rem; width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 0; border-radius: var(--radius-md);
+    background: none; color: inherit; text-align: left; text-decoration: none; cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+.nav-item:hover { background: rgb(255 255 255 / 0.09); color: #fff; }
+.nav-item.is-active { background: #294464; color: #fff; font-weight: 700; }
+.nav-item.is-disabled { color: #8fa8d8; cursor: default; }
+.nav-item.is-disabled:hover { background: none; color: #8fa8d8; }
+.nav-text { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.nav-soon {
+    padding: 0.05rem 0.45rem; border-radius: var(--radius-sm);
+    background: rgb(255 255 255 / 0.12); font-size: 0.75rem;
+}
+
+.sidebar-footer { padding: 0.75rem; border-top: 1px solid rgb(255 255 255 / 0.1); }
+.sidebar-footer form { margin: 0; }
+
+/* ---------- Área principal ---------- */
+.app-main { margin-left: var(--sidebar-w); transition: margin-left 0.2s ease; }
+.app-backdrop { display: none; }
+
+.topbar {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    height: var(--topbar-h); padding: 0 1.5rem;
+    background: #fff; border-bottom: 1px solid #e2e8f0;
+}
+.icon-btn {
+    display: grid; place-items: center; width: 2.5rem; height: 2.5rem;
+    border: 1px solid var(--line); border-radius: var(--radius-md);
+    background: var(--surface); color: var(--blue-800); cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--blue-500); color: var(--blue-600); }
+
+.topbar-user {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+    border: 0; border-radius: 0; background: transparent;
+}
+.topbar-user-name { font-weight: 700; }
+.avatar {
+    display: grid; place-items: center; width: 2rem; height: 2rem;
+    border-radius: 12px; font-weight: 700;
+}
+
+.content { width: 100%; margin: 0 auto; padding: 2rem clamp(1rem, 2.2vw, 2rem) 4rem; }
+
+/* Cabecera de página (componente x-ui.page-header) */
+.page-header {
+    display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+    gap: 1rem; margin-bottom: 1.5rem;
+}
+.page-header-sub { margin-top: 0.25rem; color: var(--muted); }
+.page-header-actions { display: flex; gap: 0.5rem; }
+.section-title { margin: 2rem 0 1rem; }
+
+/* ---------- Escritorio: menú colapsado (solo iconos) ---------- */
+@media (min-width: 64rem) {
+    html.sidebar-collapsed .sidebar { width: var(--sidebar-w-collapsed); }
+    html.sidebar-collapsed .app-main { margin-left: var(--sidebar-w-collapsed); }
+    html.sidebar-collapsed .brand { justify-content: center; padding: 0; }
+    html.sidebar-collapsed .brand-text,
+    html.sidebar-collapsed .nav-text,
+    html.sidebar-collapsed .nav-soon { display: none; }
+    html.sidebar-collapsed .nav-item { justify-content: center; padding: 0.7rem 0; }
+    html.sidebar-collapsed .nav-group-title {
+        height: 1px; margin: 0.9rem 0.75rem; background: rgb(255 255 255 / 0.14); font-size: 0;
+    }
+}
+
+/* ---------- Móvil: el menú es un panel que se abre sobre el contenido ---------- */
+@media (max-width: 63.99rem) {
+    .sidebar {
+        transform: translateX(-100%); visibility: hidden;
+        transition: transform 0.2s ease, visibility 0s linear 0.2s;
+    }
+    body.sidebar-open .sidebar { transform: none; visibility: visible; transition-delay: 0s; }
+    .app-main { margin-left: 0; }
+    .app-backdrop { position: fixed; inset: 0; z-index: 30; background: rgb(10 28 66 / 0.55); }
+    body.sidebar-open .app-backdrop { display: block; }
+    .topbar { padding: 0 1rem; }
+    .content { padding: 1.5rem 1rem 3rem; }
+}

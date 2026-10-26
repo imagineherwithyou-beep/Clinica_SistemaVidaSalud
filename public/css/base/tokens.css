@@ -1,0 +1,65 @@
+/* Tokens de diseño: el resto del CSS solo usa estas variables. Para cambiar el tema, edite aquí. */
+:root {
+    /* Azul de marca */
+    --blue-50: #eef4ff;
+    --blue-100: #dde8fc;
+    --blue-200: #c2d5f7;
+    --blue-300: #9bb9ef;
+    --blue-500: #3d70e0;
+    --blue-600: #34b2ecc9;
+    --blue-700: #1d46a3;
+    --blue-800: #17387f;
+    --blue-900: #102a5f;
+    --blue-950: #0a1c42;
+   --navy: #142d4e;
+  --blue: #2878e5;
+  --bg: #f4f7fb;
+  --ink: #1d2b3a;
+  --muted: #718096;
+  --white: #fff;
+  --line: #e5ebf2;
+  --red: #d94f5c;
+  --green: #16866e;
+    /* Neutros con tinte azul (el fondo ya no es blanco) */
+    --ink: #14213d;
+    --muted: #52627f;
+    --bg: #f3f6fa;
+    --surface: #ffffff;
+    --line: #e1e8f0;
+
+    /* Estados */
+    --ok: #136f35;
+    --ok-bg: #e1f5e8;
+    --danger: #b3261e;
+    --danger-bg: #fdeceb;
+    --warn: #8f5206;
+    --warn-bg: #fdf0d9;
+
+    /* Un color por rol (se ve igual en la barra superior, las tablas y el dashboard) */
+    --rol-administrador: #5b2fc4;
+    --rol-administrador-bg: #ece6fb;
+    --rol-recepcionista: #0b7285;
+    --rol-recepcionista-bg: #dff5f8;
+    --rol-medico: #136f35;
+    --rol-medico-bg: #e1f5e8;
+    --rol-paciente: #8f5206;
+    --rol-paciente-bg: #fdf0d9;
+
+    /* Forma y tipografía */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 14px;
+    --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+
+    /* Layout */
+    --sidebar-w: 16rem;
+    --sidebar-w-collapsed: 4.75rem;
+    --topbar-h: 4rem;
+
+    /* Motivo de la marca: las filas de una agenda */
+    --agenda-lines: repeating-linear-gradient(
+        to bottom, transparent 0, transparent 2.5rem,
+        rgb(255 255 255 / 0.09) 2.5rem, rgb(255 255 255 / 0.09) calc(2.5rem + 1px)
+    );
+}

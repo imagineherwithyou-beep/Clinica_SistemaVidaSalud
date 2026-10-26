@@ -1,0 +1,23 @@
+/* Avisos, etiquetas de rol y estado */
+.alert { margin-bottom: 1.25rem; padding: 0.75rem 1rem; border-left: 4px solid; border-radius: var(--radius-sm); }
+.alert-ok { background: var(--ok-bg); border-color: var(--ok); color: #0e4d25; }
+.alert-error { background: var(--danger-bg); border-color: var(--danger); color: #7d1a14; }
+.alert-info { background: var(--blue-100); border-color: var(--blue-600); color: var(--blue-900); }
+
+.badge { display: inline-block; padding: 0.1rem 0.55rem; border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 700; }
+.topbar-user .badge { padding: 0; background: transparent; color: #6b7d93; font-size: .75rem; font-weight: 400; }
+.topbar-user .avatar.rol-administrador,
+.topbar-user .avatar.rol-recepcionista,
+.topbar-user .avatar.rol-medico,
+.topbar-user .avatar.rol-paciente { background: #e4efff; color: #2868bc; }
+
+/* Color por rol: se usa en badges y avatares (la clase la entrega Rol::clase) */
+.rol-administrador { background: var(--rol-administrador-bg); color: var(--rol-administrador); }
+.rol-recepcionista { background: var(--rol-recepcionista-bg); color: var(--rol-recepcionista); }
+.rol-medico { background: var(--rol-medico-bg); color: var(--rol-medico); }
+.rol-paciente { background: var(--rol-paciente-bg); color: var(--rol-paciente); }
+
+.status { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--muted); }
+.status::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: #9aa9c4; }
+.status-on { color: var(--ok); }
+.status-on::before { background: #2f9e5b; }

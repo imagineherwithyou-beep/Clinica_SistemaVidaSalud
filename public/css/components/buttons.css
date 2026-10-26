@@ -1,0 +1,15 @@
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid transparent; border-radius: var(--radius-md);
+    font-weight: 700; text-decoration: none; cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn-primary { background: #2878e5; color: #fff; }
+.btn-primary:hover { background: #1d68d0; }
+.btn-secondary { background: var(--surface); border-color: var(--line); color: var(--blue-600); }
+.btn-secondary:hover { border-color: var(--blue-600); color: var(--blue-600); }
+.btn-danger { background: var(--surface); border-color: #efc2be; color: var(--danger); }
+.btn-danger:hover { background: var(--danger-bg); border-color: var(--danger); }
+.btn-sm { padding: 0.35rem 0.75rem; font-size: 0.9rem; }
+.btn-block { width: 100%; }

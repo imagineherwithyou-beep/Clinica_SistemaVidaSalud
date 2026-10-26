@@ -1,0 +1,23 @@
+.patient-form { max-width: 48rem; }
+.patient-profile { margin-bottom: 1rem; }
+.patient-identity { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; }
+.patient-avatar { display: grid; flex: none; width: 3.5rem; height: 3.5rem; place-items: center; border-radius: 50%; background: #e5efff; color: var(--blue-700); font-size: 1.15rem; font-weight: 700; }
+.patient-identity h2 { margin: 0; font-size: 1.2rem; }
+.patient-identity p { color: var(--muted); font-size: .85rem; }
+.patient-identity > .status { margin-left: auto; }
+.patient-detail-grid { display: grid; grid-template-columns: minmax(15rem, .85fr) minmax(0, 1.4fr); align-items: start; gap: 1rem; margin-bottom: 1rem; }
+.patient-info-card, .patient-history-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; }
+.patient-info-card h2, .patient-history-card h2 { padding: .9rem 1rem; border-bottom: 1px solid var(--line); font-size: 1rem; }
+.patient-info-card dl { display: grid; grid-template-columns: minmax(6rem, .75fr) minmax(0, 1fr); gap: .45rem .75rem; margin: 0; padding: 1rem; font-size: .9rem; }
+.patient-info-card dt { color: var(--muted); }
+.patient-info-card dd { margin: 0; color: var(--blue-900); overflow-wrap: anywhere; }
+.patient-history-card .table-wrap { border: 0; border-radius: 0; }
+.patient-history-table th, .patient-history-table td { white-space: normal; font-size: .82rem; }
+.appointment-status { display: inline-block; padding: .12rem .45rem; border-radius: 999px; background: #edf4ff; color: var(--blue-700); font-size: .75rem; font-weight: 700; }
+.status-atendida { background: #e5f6eb; color: #147a3b; }
+.status-cancelada { background: #eef1f5; color: #5f6b7a; }
+.status-inasistencia { background: #fff1d6; color: #9a6100; }
+.patient-history-card .pager { padding: 0 1rem 1rem; }
+.page-header-actions form { margin: 0; }
+@media (max-width: 60rem) { .patient-detail-grid { grid-template-columns: 1fr; } }
+@media (max-width: 40rem) { .patient-identity { flex-wrap: wrap; } .patient-identity > .estado { margin-left: 0; } }

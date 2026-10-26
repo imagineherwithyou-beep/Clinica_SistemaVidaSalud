@@ -1,0 +1,56 @@
+/* Acceso al sistema */
+.login-page { min-height: 100vh; margin: 0; background: #fff; color: var(--ink); }
+.login-screen { min-height: 100vh; display: grid; grid-template-columns: 1.05fr 0.95fr; background: #fff; }
+.login-art {
+    position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column;
+    justify-content: space-between; min-height: 100vh; padding: clamp(2rem, 4vw, 3.75rem);
+    color: #fff; background: linear-gradient(145deg, #102b4c 0%, #174b70 58%, #147c83 100%);
+}
+.login-art::before, .login-art::after {
+    position: absolute; z-index: -1; top: 10%; right: -11rem; width: 34rem; aspect-ratio: 1;
+    border: 1px solid rgb(255 255 255 / 12%); border-radius: 50%; content: ""; pointer-events: none;
+}
+.login-art::after { top: 21%; right: -6.5rem; width: 23rem; }
+.brand { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .75rem; width: fit-content; color: inherit; font-size: 1.35rem; font-weight: 700; letter-spacing: -.04em; text-decoration: none; }
+.brand-mark { display: grid; width: 2.65rem; height: 2.65rem; flex: 0 0 2.65rem; place-items: center; border-radius: 14px; background: linear-gradient(135deg, #4fe0c2, #49a4ff); color: #10314c; }
+.art-copy { position: relative; z-index: 1; width: min(100%, 35rem); margin: 3rem 0; }
+.eyebrow { margin: 0 0 1.2rem; color: #8ce5dc; font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.art-copy h1 { margin: 0 0 1.1rem; font-size: clamp(2.4rem, 4vw, 3.5rem); line-height: 1.08; letter-spacing: -.045em; }
+.art-copy > p:not(.eyebrow) { max-width: 31rem; margin: 0; color: #d4e2ef; font-size: 1rem; line-height: 1.8; }
+.mini-card { display: flex; align-items: center; gap: .9rem; max-width: 23rem; margin-top: 1.2rem; padding: 1rem; border: 1px solid rgb(255 255 255 / 15%); border-radius: 18px; background: rgb(255 255 255 / 7%); }
+.mini-icon { display: grid; width: 3rem; height: 3rem; flex: 0 0 3rem; place-items: center; border-radius: 14px; background: #d9fff4; color: #167b76; font-size: 1.4rem; }
+.mini-card strong, .mini-card small { display: block; }
+.mini-card small { margin-top: .25rem; color: #c8d9e7; line-height: 1.4; }
+.art-foot { position: relative; z-index: 1; color: #c1d3e0; font-size: .78rem; }
+.login-panel { display: flex; align-items: center; justify-content: center; padding: clamp(2rem, 6vw, 5rem); }
+.login-box { width: min(100%, 26.25rem); }
+.brand-login { margin-bottom: 2.1rem; color: var(--navy); font-size: 1.25rem; }
+.login-box h2 { margin: 0 0 .5rem; color: #172b43; font-size: 1.9rem; line-height: 1.2; letter-spacing: -.035em; }
+.sub { margin: 0 0 2rem; color: var(--muted); line-height: 1.65; }
+.login-box .field { margin: 0 0 1.1rem; }
+.login-box .field label { margin-bottom: .45rem; color: #142d4e; font-size: .84rem; }
+.login-box .field input { min-height: 3.1rem; padding: .75rem .9rem; border: 1px solid #d7e0ed; border-radius: 11px; color: var(--ink); font: inherit; }
+.login-box .field input:focus { border-color: #2878e5; outline: 3px solid rgb(40 120 229 / 12%); }
+.login-box .password-wrap { position: relative; display: flex; }
+.login-box .password-wrap input { width: 100%; padding-right: 5rem; }
+.show-pass { position: absolute; top: 50%; right: .85rem; transform: translateY(-50%); border: 0; background: transparent; color: #2878e5; font-size: .8rem; font-weight: 700; cursor: pointer; }
+.login-box .field-error { margin-top: .35rem; font-size: .82rem; }
+.login-error { margin-bottom: 1rem; padding: .75rem .9rem; border: 1px solid #ffd6da; border-radius: 10px; background: #fff0f0; color: #a52b3a; font-size: .9rem; }
+.login-submit { min-height: 3.1rem; justify-content: center; gap: .6rem; margin-top: .35rem; border-radius: 11px; background: #2878e5; box-shadow: 0 7px 16px rgb(40 120 229 / 17%); font-size: .98rem; }
+.login-submit:hover { background: #1768d1; }
+.hint { margin: 1.25rem 0 0; color: #8290a2; font-size: .75rem; line-height: 1.6; }
+
+@media (max-width: 900px) {
+    .login-screen { grid-template-columns: minmax(18rem, .85fr) 1.15fr; }
+    .login-art { padding: 2rem; }
+    .art-copy h1 { font-size: clamp(2.25rem, 5vw, 3rem); }
+    .login-panel { padding: 2.5rem; }
+}
+@media (max-width: 680px) {
+    .login-screen { grid-template-columns: 1fr; }
+    .login-art { min-height: auto; padding: 1.25rem 1.5rem; }
+    .login-art .art-copy, .login-art .art-foot { display: none; }
+    .login-panel { min-height: calc(100vh - 5.2rem); align-items: flex-start; padding: 2.75rem 1.5rem; }
+    .brand-login { display: none; }
+    .login-box { margin: auto; }
+}
